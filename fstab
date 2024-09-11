@@ -1,0 +1,28 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+#Este archivo fstab controla los puntos de montaje al arrancar le sistema, montando automaticamente el ssd que sea necesario
+
+
+# <file system> <dir> <type> <options> <dump> <pass>   <---guia de referencia
+# /dev/sdb1     <-- Particion de booteo
+UUID=78AC-FC06      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+# /dev/sdb2     <-- Particion principal para el sistema /   
+UUID=dfe1e639-1432-4f2f-8633-06fbc7d87a12	/         	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=256,subvol=/@	0 0
+# /dev/sdb2     <-- Particion para carpeta de logs
+UUID=dfe1e639-1432-4f2f-8633-06fbc7d87a12	/var/log  	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=258,subvol=/@log	0 0
+# /dev/sdb2     <-- Particion para carpeta de cache de pacman
+UUID=dfe1e639-1432-4f2f-8633-06fbc7d87a12	/var/cache/pacman/pkg	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=259,subvol=/@pkg	0 0
+# /dev/sdb2     <-- Particion para carpeta de snapshots
+UUID=dfe1e639-1432-4f2f-8633-06fbc7d87a12	/.snapshots	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=260,subvol=/@.snapshots	0 0
+# /dev/sdb4     <-- Particion para carpeta de usuario
+UUID=7d4e7825-a291-4658-95ba-173c87faa22c	/home		btrfs 		rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2  0  0
+
+# Lista de UUIDs de SDB obtenida con el comando blkid para facilitar la escritura en el archivo
+
+#sudo blkid -->
+#/dev/sdb4: UUID="7d4e7825-a291-4658-95ba-173c87faa22c" UUID_SUB="7bcdf70d-065a-4465-bc73-f4d4de96d97e" BLOCK_SIZE="4096" TYPE="btrfs" PARTLABEL="SweetHome" PARTUUID="7d21156f-f641-4ba9-917f-e2dd4cc41001"
+#/dev/sdb2: UUID="dfe1e639-1432-4f2f-8633-06fbc7d87a12" UUID_SUB="fefb0b2e-5db7-402d-839d-adb382968c71" BLOCK_SIZE="4096" TYPE="btrfs" PARTLABEL="Arch" PARTUUID="5a0e538b-9164-4f44-850e-626de83c19ac"
+#/dev/sdb3: UUID="46324824-6a8d-43bb-a06f-1885a9ba1020" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="OtherDistros" PARTUUID="af0c184a-0f42-4eed-884d-60092cf7698e"
+#/dev/sdb1: UUID="78AC-FC06" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="boot" PARTUUID="51878f83-2f70-4867-b47f-0c3fbbe8599d"
+

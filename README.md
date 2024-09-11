@@ -1,4 +1,4 @@
-# inux Configurations Backup & Guide
+# Linux Configurations Backup & Guide
 
 ¡Bienvenido a mi repositorio de configuraciones de ArchLinux! 🚀 Este espacio no solo me sirve como respaldo de mis archivos y configuraciones, sino también como una guía detallada y comentada para futuras referencias. Si alguna vez necesitas recordar para qué servía un archivo o cómo configuraste algo, este repositorio será tu mejor aliado.
 
