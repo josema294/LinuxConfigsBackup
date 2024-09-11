@@ -9,7 +9,8 @@ El repositorio está organizado en carpetas, cada una dedicada a un tema especí
 ### 📂 /fstab
 - **Descripción:** Configuraciones del archivo `fstab` para montar discos duros automáticamente.
 - **Archivo:** `fstab`
-- **Detalles:** Este archivo ha sido editado para montar uno de mis discos duros directamente en `/home`.
 
-
+### 📂 /.bashrc
+- **Descripción:** Configuraciones del archivo `.bashrc` con mis alias y scrips para mejorar la experiencia de la terminal.
+- **Archivo:** `.bashrc`
 
